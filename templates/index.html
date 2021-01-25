@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Speech Recognition in Python</title>
+
+    </head>
+    <body>
+        <div id="speechContainer">
+            <h1>Upload new file</h1>
+            <form method= "POST" enctype="multipart/form-data">
+                <input type="file" name = "file"/>
+                <br>
+                <input type="submit" value ="Transcribe"/> 
+                <!--sends the .wav file to the .py file so it can be transcribed-->
+            </form>
+        </div>
+        {% if transcript != "" %}
+        <div id="speechTranscriptContainer">
+            <h1>Transcript</h1>
+            <p>{{transcript}}</p>
+        </div>
+        {% endif %}
+    </body>
+    </html>
